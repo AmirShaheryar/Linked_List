@@ -87,6 +87,31 @@ public:
         return size;
         
     }
+    int Insert_At_Index(int place,int Ndata)
+    {
+        if(place==0)
+        {
+            Node*NNode=new Node();
+            NNode->data=Ndata;
+            NNode->next=head;
+            head=NNode;
+        }
+        
+        else
+        {
+            Node*temp=head;
+            Node*NNode=new Node();
+            NNode->data=Ndata;
+            int i=0;
+            while(i<place-1)
+            {
+                temp=temp->next;
+                i++;
+            }
+            NNode->next=temp->next;
+            temp->next=NNode;
+        }
+    }
 
     void Print()
     {
@@ -123,4 +148,5 @@ int main() {
 
     return 0;
 }
+
 
