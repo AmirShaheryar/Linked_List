@@ -74,6 +74,19 @@ public:
         }
         return false;
     }
+    int Length()
+    {
+        Node*temp=head;
+        
+        int size=0;
+        while (temp!=nullptr)
+        {
+            size++;
+            temp=temp->next;
+        }
+        return size;
+        
+    }
 
     void Print()
     {
@@ -110,3 +123,4 @@ int main() {
 
     return 0;
 }
+
