@@ -112,6 +112,26 @@ public:
             temp->next=NNode;
         }
     }
+    int Get_Index_Value(int Position)
+    {
+        int s=Length();
+        if(Position>s)
+        {
+            return -1;
+        }
+        
+        else
+        {
+            Node*temp=head;
+            int i=0;
+            while(i<Position-1)
+            {
+                temp=temp->next;
+                i++;
+            }
+            return temp->data;
+        }
+    }
 
     void Print()
     {
@@ -148,5 +168,6 @@ int main() {
 
     return 0;
 }
+
 
 
