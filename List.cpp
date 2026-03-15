@@ -268,6 +268,21 @@ public:
         temp->next=other.head;
     }
 
+    void Reverse() 
+    {
+        Node* prev = nullptr;
+        Node* current = head;
+        Node* next = nullptr;
+
+        while (current != nullptr) 
+        {
+            next = current->next;
+            current->next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+    }
 
     ~Linked_List() 
     {
