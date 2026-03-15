@@ -159,6 +159,19 @@ public:
         return slow->data;
     }
 
+    void UpdateAtIndex(int Index,int val)
+    {
+        if(head==nullptr)
+        {
+            return;
+        }
+        Node*temp=head;
+        for(int i=0;i<Index-1;i++)
+        {   
+            temp=temp->next;
+        }
+        temp->data=val;
+    }
 
     void Sort()
     {
