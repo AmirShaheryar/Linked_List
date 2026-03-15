@@ -284,7 +284,8 @@ public:
     
 };
 
-int main() {
+int main() 
+{
     Linked_List list;
 
     list.Insert_Data(12);
@@ -339,7 +340,22 @@ int main() {
     list.Print();
     cout<<"\n";
 
+    list.UpdateAtIndex(2,100);
+    list.Print();
+    cout<<"\n";
+
+    list.Insert_Data(1);
+    list.Insert_Data(2);
+    list.Insert_Data(3);
+    list.Insert_Data(4);
+    cout<<"List after Insertion : ";
+    list.Print();
+    cout<<"\n";
+    list.RemoveDuplicate();
+    list.Print();
+
     return 0;
 }
+
 
 
