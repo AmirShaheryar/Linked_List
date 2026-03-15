@@ -210,21 +210,54 @@ int main() {
     list.Print();
     cout << "\n";
 
+    cout<<"Size of List : "<<list.Length()<<"\n";
+
     list.Insert_Data(123);
     cout << "List after inserting 123: ";
     list.Print();
     cout << "\n";
+    cout<<"Size of List : "<<list.Length()<<"\n";
+
+    list.Insert_At_Index(0,5);
+    cout << "List after inserting 5: ";
+    list.Print();
+    cout << "\n";
+    cout<<"Size of List : "<<list.Length()<<"\n";
+
+    list.Insert_At_Index(2,15);
+    cout << "List after inserting 15: ";
+    list.Print();
+    cout << "\n";
+    cout<<"Size of List : "<<list.Length()<<"\n";
+
+    cout<<"Value at Index 2 "<<list.Get_Index_Value(2)<<"\n";
 
     list.Delete(123);
     cout << "List after deleting 123: ";
     list.Print();
     cout << "\n";
+    cout<<"Size of List : "<<list.Length()<<"\n";
 
     cout << "Search 123: " << list.Search(123) << "\n";
     cout << "Search 13: "  << list.Search(13)  << "\n";
 
+
+    list.Insert_Data(1);
+    list.Insert_Data(2);
+    list.Insert_Data(3);
+    list.Insert_Data(4);
+    cout<<"List after Insertion : ";
+    list.Print();
+    cout<<"\n";
+    cout<<"Middle Element : "<<list.find_Mid_Element()<<"\n";
+    cout<<"Middle Element : "<<list.Find_Middle()<<"\n";
+
+    list.Sort();
+
+    list.Print();
+    cout<<"\n";
+
     return 0;
 }
-
 
 
