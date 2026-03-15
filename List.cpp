@@ -36,6 +36,25 @@ public:
             temp->next = New_Node;
         }
     }
+    void RemoveDuplicate() 
+    {
+        for (Node* temp1 = head; temp1 != nullptr; temp1 = temp1->next)
+        {
+            for (Node* temp2 = temp1; temp2->next != nullptr; ) 
+            {
+                if (temp1->data == temp2->next->data) 
+                {
+                    Node* duplicate = temp2->next;
+                    temp2->next = temp2->next->next; 
+                    delete duplicate;
+                } 
+                else 
+                {
+                    temp2 = temp2->next; 
+                }
+            }
+        }
+    }
 
     void Delete(int Ndata)
     {
