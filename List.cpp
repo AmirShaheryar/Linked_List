@@ -132,6 +132,63 @@ public:
             return temp->data;
         }
     }
+    int find_Mid_Element()
+    {
+        int s=Length();
+        int require_index=s/2;
+
+        Node*temp=head;
+        for(int i=0;i<require_index;i++)
+        {
+            temp=temp->next;
+        }
+        return temp->data;
+    }
+
+    int Find_Middle()
+    {
+        Node* slow = head;
+        Node* fast = head;
+
+        while(fast != nullptr && fast->next != nullptr)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        return slow->data;
+    }
+
+
+    void Sort()
+    {
+
+        Node*temp1=head;
+        Node*temp2=head;
+
+        for(temp1=head;temp1->next!=nullptr;temp1=temp1->next)
+        {
+            for(temp2=temp1->next;temp2!=nullptr;temp2=temp2->next)
+            {
+                if(temp1->data>temp2->data)
+                {
+                    swap(temp1->data,temp2->data);
+                }
+            }
+        }
+
+    }
+    ~Linked_List() 
+    {
+        Node* temp;
+        while (head != nullptr) 
+        {
+            temp = head;
+            head = head->next;
+            delete temp;
+        }
+    }
+
 
     void Print()
     {
