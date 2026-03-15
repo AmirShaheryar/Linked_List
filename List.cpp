@@ -178,6 +178,48 @@ public:
         }
 
     }
+    void Delete_At_Index(int Index)
+    {
+        if (head == nullptr) 
+        {
+            cout << "List is empty!" << endl;
+            return;
+        }
+
+        if (Index == 0) 
+        {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+            return;
+        }
+
+        Node* temp1 = head;
+        for (int i = 0; temp1 != nullptr && i < Index - 1; i++) 
+        {
+            temp1 = temp1->next;
+        }
+
+        if (temp1 == nullptr || temp1->next == nullptr) 
+        {
+            cout << "Index out of range!" << endl;
+            return;
+        }
+
+        Node* temp2 = temp1->next;
+        temp1->next = temp2->next;
+        delete temp2;
+    }
+    void Print()
+    {
+        Node*temp=head;
+        while (temp!=nullptr)
+        {
+            cout<<temp->data<<" ";
+            temp=temp->next;
+        }
+        
+    }
     ~Linked_List() 
     {
         Node* temp;
@@ -190,16 +232,7 @@ public:
     }
 
 
-    void Print()
-    {
-        Node*temp=head;
-        while (temp!=nullptr)
-        {
-            cout<<temp->data<<" ";
-            temp=temp->next;
-        }
-        
-    }
+    
 };
 
 int main() {
