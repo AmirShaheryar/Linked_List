@@ -294,6 +294,30 @@ public:
             delete temp;
         }
     }
+    void DeleteNthFromEnd(int k)
+    {
+        if(head==nullptr)
+        {
+            cout<<"Not Possible \n";
+        }
+        else if(Length()<k)
+        {
+            cout<<"Not Possible \n";
+        }
+        else
+        {
+            int s=Length();
+            Node*temp=head;
+            Node*temp1;
+            for(int i=0;i<s-k;i++)
+            {
+                temp=temp->next;
+            }
+            temp1=temp->next;
+            temp->next=temp->next->next;
+            delete temp1;
+        }
+    }
 
 
     
