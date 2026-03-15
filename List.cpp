@@ -220,6 +220,23 @@ public:
         }
         
     }
+    void Merge(Linked_List &other)
+    {
+        if(head==nullptr)
+        {
+            head=other.head;
+            return;
+        }
+        Node*temp=head;
+
+        while(temp->next!=nullptr)
+        {
+            temp=temp->next;
+        }
+        temp->next=other.head;
+    }
+
+
     ~Linked_List() 
     {
         Node* temp;
